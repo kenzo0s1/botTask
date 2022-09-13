@@ -12,7 +12,8 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 bot.use(session())
 
 export const db = new DataBase()
-
+const urlPhoto = process.env.urlPhoto
+const urlArchive = process.env.urlArchive
 let stage = new Scenes.Stage([scene1,awaitTextScene])
 bot.use(stage.middleware());
 bot.start(async (ctx) => {
@@ -32,7 +33,7 @@ bot.on('text', async (ctx) => {
         case "Хочу почитать!":
             try{
                 await ctx.replyWithPhoto({
-                    url: 'https://pythonist.ru/wp-content/uploads/2020/03/photo_2021-02-03_10-47-04-350x2000-1.jpg',
+                    url: `${urlPhoto}`,
                 });
             }catch (e) {
 
@@ -41,7 +42,7 @@ bot.on('text', async (ctx) => {
 
             try{
                 await ctx.telegram.sendDocument(ctx.from.id, {
-                    url:"https://drive.google.com/u/0/uc?id=1Xs_YjOLgigsuKl17mOnR_488MdEKloCD&export=download",
+                    url:`${urlArchive}`,
                     filename: 'rar.rar'
                 })
             }catch (e) {
