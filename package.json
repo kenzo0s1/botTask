@@ -1,0 +1,22 @@
+{
+  "name": "bottest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon bot/index.js",
+    "final": "node bot/index.js",
+    "database": "node db/createSchemeUser.js  "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "nodemon": "^2.0.19",
+    "pg": "^8.8.0",
+    "telegraf": "^4.9.1",
+    "weather-js": "^2.0.0"
+  }
+}
